@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8e8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 28px;
+    color: #6a0dad;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #6a0dad;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #9a4eb2;
+}
+
+/* Estilos de los corazones flotando */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #c47fff;
+    transform: rotate(-45deg);
+    animation: float 5s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #c47fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0% { transform: translateY(0) rotate(-45deg); opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
+}
